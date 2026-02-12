@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
-import { 
+import {
   Code2, Mail, Lock, Eye, EyeOff, ArrowRight,
   User, Building2, Github, Chrome
 } from 'lucide-react';
@@ -31,28 +31,28 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!formData.agreeToTerms) {
       toast.error('Please agree to the Terms of Service');
       return;
     }
 
     setIsSubmitting(true);
-    
+
     const result = await signup(formData.name, formData.email, formData.password, formData.college);
-    
+
     if (result.success) {
       navigate('/portal/dashboard');
     }
-    
+
     setIsSubmitting(false);
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center pt-16 pb-8 px-4">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-cyan/10 rounded-full blur-[128px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-purple/10 rounded-full blur-[128px]" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[128px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[128px]" />
       </div>
 
       <motion.div
@@ -64,9 +64,9 @@ const Signup = () => {
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 group">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan to-neon-purple rounded-lg blur-lg opacity-50" />
-              <div className="relative bg-dark-900 rounded-lg p-2">
-                <Code2 className="w-8 h-8 text-neon-cyan" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-lg blur-lg opacity-50" />
+              <div className="relative bg-surface-card rounded-lg p-2">
+                <Code2 className="w-8 h-8 text-primary" />
               </div>
             </div>
             <span className="text-2xl font-bold text-gradient">InnoHacks 2.0</span>
@@ -99,7 +99,7 @@ const Signup = () => {
               <div className="w-full border-t border-white/10" />
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-dark-800 text-gray-500">Or sign up with email</span>
+              <span className="px-2 bg-surface-card text-gray-500">Or sign up with email</span>
             </div>
           </div>
 
@@ -188,9 +188,9 @@ const Signup = () => {
               />
               <Label htmlFor="agreeToTerms" className="text-gray-400 text-sm leading-relaxed">
                 I agree to the{' '}
-                <a href="#" className="text-neon-cyan hover:underline">Terms of Service</a>
+                <a href="#" className="text-primary hover:underline">Terms of Service</a>
                 {' '}and{' '}
-                <a href="#" className="text-neon-cyan hover:underline">Privacy Policy</a>
+                <a href="#" className="text-primary hover:underline">Privacy Policy</a>
               </Label>
             </div>
 
@@ -216,7 +216,7 @@ const Signup = () => {
 
           <p className="text-center text-gray-400 text-sm mt-6">
             Already have an account?{' '}
-            <Link to="/login" className="text-neon-cyan hover:underline">
+            <Link to="/login" className="text-primary hover:underline">
               Sign in
             </Link>
           </p>

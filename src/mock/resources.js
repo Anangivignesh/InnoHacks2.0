@@ -1,0 +1,73 @@
+
+export const resources = [
+    {
+        id: 1,
+        title: 'React Documentation',
+        description: 'The official documentation for React. A must-read for frontend developers.',
+        link: 'https://react.dev',
+        category: 'Frontend',
+    },
+    {
+        id: 2,
+        title: 'Tailwind CSS Cheatsheet',
+        description: 'Quick reference for Tailwind CSS utility classes.',
+        link: 'https://tailwindcss.com/docs',
+        category: 'Frontend',
+    },
+    {
+        id: 3,
+        title: 'Node.js Best Practices',
+        description: 'Comprehensive guide to Node.js development best practices.',
+        link: 'https://github.com/goldbergyoni/nodebestpractices',
+        category: 'Backend',
+    },
+    {
+        id: 4,
+        title: 'MongoDB University',
+        description: 'Free courses to learn MongoDB from the experts.',
+        link: 'https://learn.mongodb.com',
+        category: 'Backend',
+    },
+    {
+        id: 5,
+        title: 'Hugging Face Hub',
+        description: 'Platform for sharing and collaborating on ML models and datasets.',
+        link: 'https://huggingface.co',
+        category: 'AI / ML',
+    },
+    {
+        id: 6,
+        title: 'OpenAI API Docs',
+        description: 'Documentation for integrating GPT models into your applications.',
+        link: 'https://platform.openai.com/docs',
+        category: 'AI / ML',
+    },
+    {
+        id: 7,
+        title: 'Public APIs List',
+        description: 'A collective list of free APIs for use in software and web development.',
+        link: 'https://github.com/public-apis/public-apis',
+        category: 'APIs',
+    },
+    {
+        id: 8,
+        title: 'Postman',
+        description: 'Simplify each step of building an API and streamline collaboration.',
+        link: 'https://www.postman.com',
+        category: 'Dev Tools',
+    },
+    {
+        id: 9,
+        title: 'Vercel',
+        description: 'Develop, Preview, Ship. The best place to deploy your frontend.',
+        link: 'https://vercel.com',
+        category: 'Dev Tools',
+    },
+    {
+        id: 10,
+        title: 'Figma',
+        description: 'The collaborative interface design tool.',
+        link: 'https://figma.com',
+        category: 'Dev Tools',
+    },
+];

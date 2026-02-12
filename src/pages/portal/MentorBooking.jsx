@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
+import {
   UserCircle, Calendar, Clock, Star, MessageCircle,
   CheckCircle, Search, Filter, Linkedin, Twitter,
   Mail, ArrowRight
@@ -103,7 +103,7 @@ const MentorBooking = () => {
 
   const filteredMentors = mentors.filter(mentor => {
     const matchesSearch = mentor.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         mentor.expertise.some(e => e.toLowerCase().includes(searchQuery.toLowerCase()));
+      mentor.expertise.some(e => e.toLowerCase().includes(searchQuery.toLowerCase()));
     const matchesExpertise = selectedExpertise === 'all' || mentor.expertise.includes(selectedExpertise);
     return matchesSearch && matchesExpertise;
   });
@@ -152,11 +152,10 @@ const MentorBooking = () => {
                 <button
                   key={area}
                   onClick={() => setSelectedExpertise(area)}
-                  className={`px-4 py-2 rounded-lg text-sm transition-colors ${
-                    selectedExpertise === area
-                      ? 'bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/50'
-                      : 'bg-white/5 text-gray-400 hover:bg-white/10'
-                  }`}
+                  className={`px-4 py-2 rounded-lg text-sm transition-colors ${selectedExpertise === area
+                    ? 'bg-primary/20 text-primary border border-primary/50'
+                    : 'bg-white/5 text-gray-400 hover:bg-white/10'
+                    }`}
                 >
                   {area === 'all' ? 'All Areas' : area}
                 </button>
@@ -176,7 +175,7 @@ const MentorBooking = () => {
               className="card-glass p-6 hover:border-white/20 transition-colors"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-neon-cyan to-neon-purple flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                   <span className="text-white font-bold text-xl">{mentor.avatar}</span>
                 </div>
                 <div className="flex items-center gap-1">
@@ -186,7 +185,7 @@ const MentorBooking = () => {
               </div>
 
               <h3 className="text-xl font-semibold text-white mb-1">{mentor.name}</h3>
-              <p className="text-neon-cyan text-sm mb-1">{mentor.role}</p>
+              <p className="text-primary text-sm mb-1">{mentor.role}</p>
               <p className="text-gray-400 text-sm mb-4">{mentor.company}</p>
 
               <p className="text-gray-400 text-sm mb-4 line-clamp-2">{mentor.bio}</p>
@@ -211,22 +210,22 @@ const MentorBooking = () => {
 
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button 
-                    className="w-full btn-gradient" 
+                  <Button
+                    className="w-full btn-gradient"
                     disabled={!mentor.available}
                     onClick={() => setSelectedMentor(mentor)}
                   >
                     {mentor.available ? 'Book Session' : 'Unavailable'}
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="bg-dark-800 border-white/10 max-w-lg">
+                <DialogContent className="bg-surface-card border-white/10 max-w-lg">
                   <DialogHeader>
                     <DialogTitle className="text-white">Book Session with {mentor.name}</DialogTitle>
                     <DialogDescription className="text-gray-400">
                       Choose a time slot for your mentoring session
                     </DialogDescription>
                   </DialogHeader>
-                  
+
                   <div className="space-y-4 mt-4">
                     <div>
                       <Label className="text-gray-300">Select Date</Label>
@@ -264,7 +263,7 @@ const MentorBooking = () => {
                       />
                     </div>
 
-                    <Button 
+                    <Button
                       onClick={() => handleBookSession(mentor)}
                       className="w-full btn-gradient"
                     >
@@ -286,7 +285,7 @@ const MentorBooking = () => {
           className="mt-12 card-glass p-6"
         >
           <div className="flex items-start gap-4">
-            <CheckCircle className="w-6 h-6 text-neon-cyan flex-shrink-0 mt-0.5" />
+            <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
             <div>
               <h3 className="text-white font-semibold mb-2">How Mentoring Works</h3>
               <ul className="text-gray-400 text-sm space-y-2">

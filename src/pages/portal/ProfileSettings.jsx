@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
+import {
   User, Mail, Phone, Building2, Github, Linkedin,
   Camera, Save, CheckCircle, Lock, Bell, Moon, Sun
 } from 'lucide-react';
@@ -17,7 +17,7 @@ const ProfileSettings = () => {
   const { user, updateProfile } = useAuth();
   const { theme, toggleTheme } = useTheme();
   const [isSaving, setIsSaving] = useState(false);
-  
+
   const [profileData, setProfileData] = useState({
     name: user?.name || '',
     email: user?.email || '',
@@ -74,15 +74,15 @@ const ProfileSettings = () => {
 
         <Tabs defaultValue="profile" className="space-y-8">
           <TabsList className="bg-white/5">
-            <TabsTrigger value="profile" className="data-[state=active]:bg-neon-cyan data-[state=active]:text-dark-900">
+            <TabsTrigger value="profile" className="data-[state=active]:bg-primary data-[state=active]:text-white">
               <User className="w-4 h-4 mr-2" />
               Profile
             </TabsTrigger>
-            <TabsTrigger value="account" className="data-[state=active]:bg-neon-cyan data-[state=active]:text-dark-900">
+            <TabsTrigger value="account" className="data-[state=active]:bg-primary data-[state=active]:text-white">
               <Lock className="w-4 h-4 mr-2" />
               Account
             </TabsTrigger>
-            <TabsTrigger value="notifications" className="data-[state=active]:bg-neon-cyan data-[state=active]:text-dark-900">
+            <TabsTrigger value="notifications" className="data-[state=active]:bg-primary data-[state=active]:text-white">
               <Bell className="w-4 h-4 mr-2" />
               Notifications
             </TabsTrigger>
@@ -98,7 +98,7 @@ const ProfileSettings = () => {
               {/* Avatar */}
               <div className="flex flex-col items-center mb-8">
                 <div className="relative">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-neon-cyan to-neon-purple flex items-center justify-center">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                     <span className="text-3xl font-bold text-white">
                       {user?.avatar ? (
                         <img src={user.avatar} alt={user.name} className="w-full h-full rounded-full" />
@@ -107,8 +107,8 @@ const ProfileSettings = () => {
                       )}
                     </span>
                   </div>
-                  <button className="absolute bottom-0 right-0 w-8 h-8 rounded-full bg-neon-cyan flex items-center justify-center hover:bg-neon-cyan/80 transition-colors">
-                    <Camera className="w-4 h-4 text-dark-900" />
+                  <button className="absolute bottom-0 right-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-primary/80 transition-colors">
+                    <Camera className="w-4 h-4 text-background-dark" />
                   </button>
                 </div>
                 <h2 className="text-xl font-semibold text-white mt-4">{profileData.name}</h2>
@@ -229,7 +229,7 @@ const ProfileSettings = () => {
                   </div>
                 </div>
 
-                <Button 
+                <Button
                   onClick={handleSave}
                   disabled={isSaving}
                   className="btn-gradient px-8"
@@ -260,7 +260,7 @@ const ProfileSettings = () => {
               {/* Change Password */}
               <div className="card-glass p-6">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                  <Lock className="w-5 h-5 text-neon-cyan" />
+                  <Lock className="w-5 h-5 text-primary" />
                   Change Password
                 </h3>
                 <div className="space-y-4">
@@ -297,7 +297,7 @@ const ProfileSettings = () => {
               {/* Theme */}
               <div className="card-glass p-6">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                  {theme === 'dark' ? <Moon className="w-5 h-5 text-neon-purple" /> : <Sun className="w-5 h-5 text-yellow-400" />}
+                  {theme === 'dark' ? <Moon className="w-5 h-5 text-primary" /> : <Sun className="w-5 h-5 text-yellow-400" />}
                   Appearance
                 </h3>
                 <div className="flex items-center justify-between">
@@ -322,7 +322,7 @@ const ProfileSettings = () => {
               className="card-glass p-6"
             >
               <h3 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                <Bell className="w-5 h-5 text-neon-cyan" />
+                <Bell className="w-5 h-5 text-primary" />
                 Notification Preferences
               </h3>
               <div className="space-y-4">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
+import {
   Target, Heart, Lightbulb, Users, Award, Rocket,
   Code2, Calendar, MapPin, Clock
 } from 'lucide-react';
@@ -44,25 +44,25 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-24 pb-16 bg-background-dark">
       {/* Hero Section */}
       <section className="relative py-16">
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-cyan/10 rounded-full blur-[128px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-purple/10 rounded-full blur-[128px]" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[128px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[128px]" />
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl sm:text-6xl font-bold mb-6">
-              About <span className="text-gradient">InnoHacks</span>
+            <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-white">
+              About <span className="text-primary">InnoHacks</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              India's premier inter-college hackathon, bringing together the brightest minds 
+              India's premier inter-college hackathon, bringing together the brightest minds
               to innovate, create, and transform ideas into reality.
             </p>
           </motion.div>
@@ -74,18 +74,18 @@ const About = () => {
             transition={{ delay: 0.2 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24"
           >
-            <div className="card-glass p-6 text-center">
-              <Calendar className="w-8 h-8 text-neon-cyan mx-auto mb-3" />
+            <div className="bg-surface-card border border-white/5 p-6 text-center rounded-xl hover:border-primary/30 transition-colors">
+              <Calendar className="w-8 h-8 text-primary mx-auto mb-3" />
               <h3 className="text-white font-semibold mb-1">Date</h3>
               <p className="text-gray-400">March 15-16, 2025</p>
             </div>
-            <div className="card-glass p-6 text-center">
-              <MapPin className="w-8 h-8 text-neon-purple mx-auto mb-3" />
+            <div className="bg-surface-card border border-white/5 p-6 text-center rounded-xl hover:border-secondary/30 transition-colors">
+              <MapPin className="w-8 h-8 text-secondary mx-auto mb-3" />
               <h3 className="text-white font-semibold mb-1">Venue</h3>
               <p className="text-gray-400">Tech University, Bangalore</p>
             </div>
-            <div className="card-glass p-6 text-center">
-              <Clock className="w-8 h-8 text-neon-pink mx-auto mb-3" />
+            <div className="bg-surface-card border border-white/5 p-6 text-center rounded-xl hover:border-secondary-orange/30 transition-colors">
+              <Clock className="w-8 h-8 text-secondary-orange mx-auto mb-3" />
               <h3 className="text-white font-semibold mb-1">Duration</h3>
               <p className="text-gray-400">24 Hours of Hacking</p>
             </div>
@@ -98,8 +98,8 @@ const About = () => {
             viewport={{ once: true }}
             className="mb-24"
           >
-            <h2 className="text-3xl font-bold text-center mb-12">
-              InnoHacks 1.0 <span className="text-gradient">Highlights</span>
+            <h2 className="text-3xl font-bold text-center mb-12 text-white">
+              InnoHacks 1.0 <span className="text-primary">Highlights</span>
             </h2>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {stats.map((stat, index) => {
@@ -111,9 +111,9 @@ const About = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="card-glass p-6 text-center"
+                    className="bg-surface-card border border-white/5 p-6 text-center rounded-xl"
                   >
-                    <Icon className="w-8 h-8 text-neon-cyan mx-auto mb-3" />
+                    <Icon className="w-8 h-8 text-primary mx-auto mb-3" />
                     <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
                     <div className="text-gray-400 text-sm">{stat.label}</div>
                   </motion.div>
@@ -129,8 +129,8 @@ const About = () => {
             viewport={{ once: true }}
             className="mb-24"
           >
-            <h2 className="text-3xl font-bold text-center mb-12">
-              Our <span className="text-gradient">Values</span>
+            <h2 className="text-3xl font-bold text-center mb-12 text-white">
+              Our <span className="text-primary">Values</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((value, index) => {
@@ -142,10 +142,10 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="card-glass p-6 hover-lift"
+                    className="bg-surface-card border border-white/5 p-6 rounded-xl hover:border-white/20 transition-all cursor-default"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-neon-cyan" />
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-primary" />
                     </div>
                     <h3 className="text-lg font-semibold text-white mb-2">{value.title}</h3>
                     <p className="text-gray-400 text-sm">{value.description}</p>
@@ -161,8 +161,8 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold text-center mb-12">
-              Organizing <span className="text-gradient">Team</span>
+            <h2 className="text-3xl font-bold text-center mb-12 text-white">
+              Organizing <span className="text-primary">Team</span>
             </h2>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
               {team.map((member, index) => (
@@ -172,13 +172,13 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="card-glass p-6 text-center"
+                  className="bg-surface-card border border-white/5 p-6 text-center rounded-xl"
                 >
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-neon-cyan to-neon-purple flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl font-bold text-white">{member.image}</span>
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-black">{member.image}</span>
                   </div>
                   <h3 className="text-lg font-semibold text-white">{member.name}</h3>
-                  <p className="text-neon-cyan text-sm">{member.role}</p>
+                  <p className="text-secondary text-sm">{member.role}</p>
                 </motion.div>
               ))}
             </div>

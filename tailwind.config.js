@@ -11,12 +11,14 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#FD2226", // Red
+          foreground: "#FFFFFF",
+          dark: "#b91316",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#FDD42C", // Yellow
+          foreground: "#000000",
+          orange: "#FFB000", // Orange
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
@@ -38,27 +40,15 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+        "background-light": "#f8f5f5",
+        "background-dark": "#000000", // Pure Black
+        "surface-dark": "#121212",
+        "surface-card": "#1a1a1a",
         neon: {
           blue: "#00d4ff",
           purple: "#a855f7",
           pink: "#ec4899",
           cyan: "#06b6d4",
-        },
-        dark: {
-          900: "#0f172a",
-          800: "#1e293b",
-          700: "#334155",
-          600: "#475569",
         },
       },
       borderRadius: {

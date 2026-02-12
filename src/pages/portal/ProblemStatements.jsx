@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
+import {
   Brain, Globe, Wallet, Heart, GraduationCap, Rocket,
   CheckCircle, Clock, Users, ArrowRight, Filter
 } from 'lucide-react';
@@ -86,8 +86,8 @@ const ProblemStatements = () => {
     },
   ];
 
-  const filteredProblems = selectedTrack === 'all' 
-    ? problems 
+  const filteredProblems = selectedTrack === 'all'
+    ? problems
     : problems.filter(p => p.track === selectedTrack);
 
   const handleSelectProblem = (problem) => {
@@ -117,7 +117,7 @@ const ProblemStatements = () => {
             Problem <span className="text-gradient">Statements</span>
           </h1>
           <p className="text-gray-400 max-w-2xl">
-            Choose a problem statement that aligns with your interests and skills. 
+            Choose a problem statement that aligns with your interests and skills.
             You can work on any track regardless of your team's background.
           </p>
         </motion.div>
@@ -127,11 +127,11 @@ const ProblemStatements = () => {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-8 card-glass p-6 border-neon-cyan/50"
+            className="mb-8 card-glass p-6 border-primary/50"
           >
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-neon-cyan text-sm">Selected Problem</span>
+                <span className="text-primary text-sm">Selected Problem</span>
                 <h2 className="text-xl font-bold text-white">{selectedProblem.title}</h2>
               </div>
               <Button variant="outline" size="sm" onClick={() => setSelectedProblem(null)}>
@@ -155,11 +155,10 @@ const ProblemStatements = () => {
                 <button
                   key={track.id}
                   onClick={() => setSelectedTrack(track.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
-                    selectedTrack === track.id
-                      ? 'bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/50'
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${selectedTrack === track.id
+                      ? 'bg-primary/20 text-primary border border-primary/50'
                       : 'bg-white/5 text-gray-400 hover:bg-white/10'
-                  }`}
+                    }`}
                 >
                   <Icon className="w-4 h-4" />
                   {track.name}
@@ -177,9 +176,8 @@ const ProblemStatements = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + index * 0.05 }}
-              className={`card-glass p-6 hover:border-white/20 transition-colors ${
-                selectedProblem?.id === problem.id ? 'border-neon-cyan/50' : ''
-              }`}
+              className={`card-glass p-6 hover:border-white/20 transition-colors ${selectedProblem?.id === problem.id ? 'border-primary/50' : ''
+                }`}
             >
               <div className="flex items-start justify-between mb-4">
                 <div>

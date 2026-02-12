@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { 
+import {
   Award, Download, Share2, CheckCircle, Clock,
   Trophy, Star, Linkedin, Twitter
 } from 'lucide-react';
@@ -8,22 +8,15 @@ import { Button } from '../../components/ui/button';
 import { toast } from 'sonner';
 import { useAuth } from '../../context/AuthContext';
 
+import { getCertificateData } from '../../mock/certificates';
+
 const Certificate = () => {
   const { user } = useAuth();
   const certificateRef = useRef(null);
   const [isGenerating, setIsGenerating] = useState(false);
 
   // Mock certificate data
-  const certificateData = {
-    participantName: user?.name || 'John Doe',
-    eventName: 'InnoHacks 2.0',
-    eventDate: 'March 15-16, 2025',
-    certificateId: 'INNO2025-' + Math.random().toString(36).substr(2, 9).toUpperCase(),
-    issueDate: 'March 16, 2025',
-    achievement: 'Participant',
-    organizer: 'Tech University',
-    verified: true,
-  };
+  const certificateData = getCertificateData(user);
 
   const handleDownload = async () => {
     setIsGenerating(true);
@@ -70,7 +63,7 @@ const Certificate = () => {
           transition={{ delay: 0.1 }}
           className="mb-8"
         >
-          <div 
+          <div
             ref={certificateRef}
             className="relative bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl p-8 sm:p-12 shadow-2xl overflow-hidden"
           >
@@ -79,7 +72,7 @@ const Certificate = () => {
             <div className="absolute top-0 right-0 w-32 h-32 border-r-4 border-t-4 border-amber-400 rounded-tr-3xl" />
             <div className="absolute bottom-0 left-0 w-32 h-32 border-l-4 border-b-4 border-amber-400 rounded-bl-3xl" />
             <div className="absolute bottom-0 right-0 w-32 h-32 border-r-4 border-b-4 border-amber-400 rounded-br-3xl" />
-            
+
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-5">
               <div className="absolute inset-0" style={{
@@ -111,7 +104,7 @@ const Certificate = () => {
 
               {/* Description */}
               <p className="text-amber-700 text-lg mb-8 max-w-2xl mx-auto">
-                has successfully participated in <strong>{certificateData.eventName}</strong>, 
+                has successfully participated in <strong>{certificateData.eventName}</strong>,
                 a 24-hour inter-college hackathon held on <strong>{certificateData.eventDate}</strong>.
               </p>
 
@@ -201,7 +194,7 @@ const Certificate = () => {
           className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6"
         >
           <div className="card-glass p-6 text-center">
-            <Star className="w-8 h-8 text-neon-cyan mx-auto mb-3" />
+            <Star className="w-8 h-8 text-secondary mx-auto mb-3" />
             <h3 className="text-white font-semibold mb-1">Verified</h3>
             <p className="text-gray-400 text-sm">Blockchain-verified certificate</p>
           </div>

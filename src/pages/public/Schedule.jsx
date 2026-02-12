@@ -41,27 +41,27 @@ const Schedule = () => {
     const colors = {
       general: 'bg-gray-500/20 text-gray-300',
       food: 'bg-green-500/20 text-green-400',
-      keynote: 'bg-purple-500/20 text-purple-400',
-      hack: 'bg-neon-cyan/20 text-neon-cyan',
-      workshop: 'bg-blue-500/20 text-blue-400',
+      keynote: 'bg-primary/20 text-primary',
+      hack: 'bg-primary/20 text-primary',
+      workshop: 'bg-secondary/20 text-secondary',
       networking: 'bg-pink-500/20 text-pink-400',
-      mentorship: 'bg-yellow-500/20 text-yellow-400',
-      fun: 'bg-orange-500/20 text-orange-400',
+      mentorship: 'bg-secondary-orange/20 text-secondary-orange',
+      fun: 'bg-yellow-500/20 text-yellow-400',
       demo: 'bg-red-500/20 text-red-400',
     };
     return colors[type] || colors.general;
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-24 pb-16 bg-background-dark">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6">
-            Event <span className="text-gradient">Schedule</span>
+          <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-white">
+            Event <span className="text-primary">Schedule</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Your complete guide to the 24-hour hackathon experience
@@ -69,11 +69,11 @@ const Schedule = () => {
         </motion.div>
 
         <Tabs defaultValue="day1" className="w-full">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8 bg-white/5">
-            <TabsTrigger value="day1" className="data-[state=active]:bg-neon-cyan data-[state=active]:text-dark-900">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8 bg-surface-card border border-white/5">
+            <TabsTrigger value="day1" className="data-[state=active]:bg-primary data-[state=active]:text-white text-gray-400">
               Day 1 - March 15
             </TabsTrigger>
-            <TabsTrigger value="day2" className="data-[state=active]:bg-neon-cyan data-[state=active]:text-dark-900">
+            <TabsTrigger value="day2" className="data-[state=active]:bg-primary data-[state=active]:text-white text-gray-400">
               Day 2 - March 16
             </TabsTrigger>
           </TabsList>
@@ -87,14 +87,14 @@ const Schedule = () => {
                     initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className="card-glass p-6 hover:border-white/20 transition-colors"
+                    className="bg-surface-card border border-white/5 p-6 hover:border-white/20 transition-colors rounded-xl"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center gap-4">
                       <div className="flex items-center gap-3 sm:w-32 flex-shrink-0">
-                        <Clock className="w-5 h-5 text-neon-cyan" />
+                        <Clock className="w-5 h-5 text-primary" />
                         <span className="text-white font-medium">{event.time}</span>
                       </div>
-                      
+
                       <div className="flex-1">
                         <div className="flex flex-wrap items-center gap-2 mb-2">
                           <h3 className="text-lg font-semibold text-white">{event.title}</h3>
@@ -121,7 +121,7 @@ const Schedule = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 card-glass p-6"
+          className="mt-12 bg-surface-card border border-white/5 p-6 rounded-xl"
         >
           <h3 className="text-lg font-semibold text-white mb-4">Event Types</h3>
           <div className="flex flex-wrap gap-2">

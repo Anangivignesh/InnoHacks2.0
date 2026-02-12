@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
+import {
   Mail, Phone, MapPin, Send, Clock,
   Twitter, Linkedin, Instagram, Github, Youtube
 } from 'lucide-react';
@@ -34,10 +34,10 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     toast.success('Message sent! We\'ll get back to you soon.');
     setFormData({ name: '', email: '', subject: '', message: '' });
     setIsSubmitting(false);
@@ -79,7 +79,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-24 pb-16 bg-background-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -87,8 +87,8 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6">
-            Contact <span className="text-gradient">Us</span>
+          <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-white">
+            Contact <span className="text-primary">Us</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
@@ -103,7 +103,7 @@ const Contact = () => {
             transition={{ delay: 0.2 }}
             className="lg:col-span-2"
           >
-            <div className="card-glass p-8">
+            <div className="bg-surface-card border border-white/5 p-8 rounded-2xl">
               <h2 className="text-2xl font-semibold text-white mb-6">Send us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -116,7 +116,7 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="John Doe"
                       required
-                      className="bg-white/5 border-white/10 text-white placeholder:text-gray-500"
+                      className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-primary"
                     />
                   </div>
                   <div className="space-y-2">
@@ -129,7 +129,7 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="john@example.com"
                       required
-                      className="bg-white/5 border-white/10 text-white placeholder:text-gray-500"
+                      className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-primary"
                     />
                   </div>
                 </div>
@@ -140,10 +140,10 @@ const Contact = () => {
                     value={formData.subject}
                     onValueChange={(value) => setFormData(prev => ({ ...prev, subject: value }))}
                   >
-                    <SelectTrigger className="bg-white/5 border-white/10 text-white">
+                    <SelectTrigger className="bg-white/5 border-white/10 text-white focus:border-primary">
                       <SelectValue placeholder="Select a subject" />
                     </SelectTrigger>
-                    <SelectContent className="bg-dark-800 border-white/10">
+                    <SelectContent className="bg-surface-card border-white/10 text-white">
                       <SelectItem value="general">General Inquiry</SelectItem>
                       <SelectItem value="sponsorship">Sponsorship</SelectItem>
                       <SelectItem value="registration">Registration Help</SelectItem>
@@ -164,7 +164,7 @@ const Contact = () => {
                     placeholder="How can we help you?"
                     required
                     rows={6}
-                    className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 resize-none"
+                    className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 resize-none focus:border-primary"
                   />
                 </div>
 
@@ -172,11 +172,11 @@ const Contact = () => {
                   type="submit"
                   size="lg"
                   disabled={isSubmitting}
-                  className="w-full btn-gradient py-6 text-lg rounded-xl"
+                  className="w-full bg-gradient-to-r from-primary to-secondary text-black font-bold py-6 text-lg rounded-xl hover:opacity-90 transition-opacity"
                 >
                   {isSubmitting ? (
                     <span className="flex items-center gap-2">
-                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      <div className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
                       Sending...
                     </span>
                   ) : (
@@ -207,17 +207,17 @@ const Contact = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 + index * 0.1 }}
-                    className="card-glass p-4 flex items-center gap-4"
+                    className="bg-surface-card border border-white/5 p-4 flex items-center gap-4 rounded-xl"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-neon-cyan/10 flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-6 h-6 text-neon-cyan" />
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-6 h-6 text-primary" />
                     </div>
                     <div>
                       <h3 className="text-sm text-gray-400">{info.title}</h3>
                       {info.link ? (
-                        <a 
-                          href={info.link} 
-                          className="text-white font-medium hover:text-neon-cyan transition-colors"
+                        <a
+                          href={info.link}
+                          className="text-white font-medium hover:text-primary transition-colors"
                         >
                           {info.value}
                         </a>
@@ -231,7 +231,7 @@ const Contact = () => {
             </div>
 
             {/* Social Links */}
-            <div className="card-glass p-6">
+            <div className="bg-surface-card border border-white/5 p-6 rounded-xl">
               <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
               <div className="flex flex-wrap gap-3">
                 {socialLinks.map((social) => {
@@ -242,7 +242,7 @@ const Contact = () => {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+                      className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition-colors"
                       aria-label={social.name}
                     >
                       <Icon className="w-5 h-5" />
@@ -253,26 +253,26 @@ const Contact = () => {
             </div>
 
             {/* Quick Links */}
-            <div className="card-glass p-6">
+            <div className="bg-surface-card border border-white/5 p-6 rounded-xl">
               <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="/faq" className="text-gray-400 hover:text-neon-cyan transition-colors text-sm">
+                  <a href="/faq" className="text-gray-400 hover:text-primary transition-colors text-sm">
                     Frequently Asked Questions
                   </a>
                 </li>
                 <li>
-                  <a href="/schedule" className="text-gray-400 hover:text-neon-cyan transition-colors text-sm">
+                  <a href="/schedule" className="text-gray-400 hover:text-primary transition-colors text-sm">
                     Event Schedule
                   </a>
                 </li>
                 <li>
-                  <a href="/tracks" className="text-gray-400 hover:text-neon-cyan transition-colors text-sm">
+                  <a href="/tracks" className="text-gray-400 hover:text-primary transition-colors text-sm">
                     Hackathon Tracks
                   </a>
                 </li>
                 <li>
-                  <a href="/register" className="text-gray-400 hover:text-neon-cyan transition-colors text-sm">
+                  <a href="/register" className="text-gray-400 hover:text-primary transition-colors text-sm">
                     Register Now
                   </a>
                 </li>

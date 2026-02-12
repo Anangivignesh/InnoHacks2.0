@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
+import {
   Trophy, Medal, Award, TrendingUp, Users, Star,
   ChevronUp, ChevronDown, Filter
 } from 'lucide-react';
@@ -33,8 +33,8 @@ const Leaderboard = () => {
 
   const tracks = ['all', 'AI/ML', 'Web3', 'FinTech', 'HealthTech', 'EdTech', 'Open Innovation'];
 
-  const filteredData = filterTrack === 'all' 
-    ? leaderboardData 
+  const filteredData = filterTrack === 'all'
+    ? leaderboardData
     : leaderboardData.filter(item => item.track === filterTrack);
 
   const sortedData = [...filteredData].sort((a, b) => {
@@ -96,7 +96,7 @@ const Leaderboard = () => {
             <div className="order-1 sm:order-2 w-full sm:w-72">
               <div className="card-glass p-8 text-center border-yellow-400/50 glow-cyan">
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="px-4 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full text-dark-900 text-sm font-bold">
+                  <span className="px-4 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full text-background-dark text-sm font-bold">
                     Winner
                   </span>
                 </div>
@@ -137,11 +137,10 @@ const Leaderboard = () => {
               <button
                 key={track}
                 onClick={() => setFilterTrack(track)}
-                className={`px-3 py-1 rounded-full text-sm transition-colors ${
-                  filterTrack === track
-                    ? 'bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/50'
-                    : 'bg-white/5 text-gray-400 hover:bg-white/10'
-                }`}
+                className={`px-3 py-1 rounded-full text-sm transition-colors ${filterTrack === track
+                  ? 'bg-primary/20 text-primary border border-primary/50'
+                  : 'bg-white/5 text-gray-400 hover:bg-white/10'
+                  }`}
               >
                 {track === 'all' ? 'All Tracks' : track}
               </button>
@@ -204,7 +203,7 @@ const Leaderboard = () => {
                     <td className="py-4 px-6">
                       <div className="flex items-center gap-2">
                         <Star className="w-4 h-4 text-yellow-400" />
-                        <span className="text-neon-cyan font-bold">{item.score}</span>
+                        <span className="text-primary font-bold">{item.score}</span>
                       </div>
                     </td>
                     <td className="py-4 px-6">

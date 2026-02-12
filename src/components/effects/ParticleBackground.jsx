@@ -62,7 +62,7 @@ const ParticleBackground = () => {
           // Draw particle
           ctx.beginPath();
           ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(0, 212, 255, ${particle.opacity})`;
+          ctx.fillStyle = `rgba(253, 212, 44, ${particle.opacity})`;
           ctx.fill();
 
           // Draw connections (only check every 5th particle for performance)
@@ -77,7 +77,7 @@ const ParticleBackground = () => {
                 ctx.beginPath();
                 ctx.moveTo(particle.x, particle.y);
                 ctx.lineTo(other.x, other.y);
-                ctx.strokeStyle = `rgba(0, 212, 255, ${0.1 * (1 - distance / 100)})`;
+                ctx.strokeStyle = `rgba(253, 212, 44, ${0.1 * (1 - distance / 100)})`;
                 ctx.lineWidth = 0.5;
                 ctx.stroke();
               }

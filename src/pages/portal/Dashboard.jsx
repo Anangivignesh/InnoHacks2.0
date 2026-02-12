@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
+import {
   Users, Clock, Trophy, FileText, Upload, UserCircle,
   ArrowRight, CheckCircle, AlertCircle, Sparkles,
   Calendar, MapPin, Zap
@@ -40,12 +40,12 @@ const Dashboard = () => {
   }, []);
 
   const quickActions = [
-    { name: 'Team', icon: Users, path: '/portal/team', color: 'from-neon-cyan to-blue-500' },
-    { name: 'Problems', icon: FileText, path: '/portal/problems', color: 'from-neon-purple to-pink-500' },
-    { name: 'Submit', icon: Upload, path: '/portal/submission', color: 'from-green-400 to-neon-cyan' },
-    { name: 'Leaderboard', icon: Trophy, path: '/portal/leaderboard', color: 'from-yellow-400 to-orange-500' },
-    { name: 'Mentors', icon: UserCircle, path: '/portal/mentors', color: 'from-red-400 to-pink-500' },
-    { name: 'Profile', icon: Zap, path: '/portal/profile', color: 'from-neon-purple to-neon-cyan' },
+    { name: 'Team', icon: Users, path: '/portal/team', color: 'from-primary to-orange-600' },
+    { name: 'Problems', icon: FileText, path: '/portal/problems', color: 'from-orange-500 to-secondary' },
+    { name: 'Submit', icon: Upload, path: '/portal/submission', color: 'from-green-500 to-emerald-400' }, // Keep green for submit
+    { name: 'Leaderboard', icon: Trophy, path: '/portal/leaderboard', color: 'from-secondary to-yellow-300' },
+    { name: 'Mentors', icon: UserCircle, path: '/portal/mentors', color: 'from-blue-600 to-primary' },
+    { name: 'Profile', icon: Zap, path: '/portal/profile', color: 'from-primary/80 to-secondary/80' },
   ];
 
   const announcements = [
@@ -100,7 +100,7 @@ const Dashboard = () => {
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <span className="px-3 py-1 rounded-full bg-neon-cyan/10 text-neon-cyan text-sm">
+              <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">
                 Participant
               </span>
             </div>
@@ -117,7 +117,7 @@ const Dashboard = () => {
           {/* Countdown */}
           <div className="lg:col-span-2 card-glass p-6">
             <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-              <Clock className="w-5 h-5 text-neon-cyan" />
+              <Clock className="w-5 h-5 text-primary" />
               Hackathon Starts In
             </h2>
             <div className="grid grid-cols-4 gap-4">
@@ -144,14 +144,14 @@ const Dashboard = () => {
             <h2 className="text-lg font-semibold text-white mb-4">Event Details</h2>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <Calendar className="w-5 h-5 text-neon-purple" />
+                <Calendar className="w-5 h-5 text-orange-500" />
                 <div>
                   <p className="text-white text-sm">March 15-16, 2025</p>
                   <p className="text-gray-500 text-xs">24 Hours</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-neon-pink" />
+                <MapPin className="w-5 h-5 text-secondary" />
                 <div>
                   <p className="text-white text-sm">Tech University</p>
                   <p className="text-gray-500 text-xs">Bangalore, India</p>
@@ -208,7 +208,7 @@ const Dashboard = () => {
           >
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-lg font-semibold text-white">Your Checklist</h2>
-              <span className="text-neon-cyan text-sm">{Math.round(completionPercentage)}%</span>
+              <span className="text-primary text-sm">{Math.round(completionPercentage)}%</span>
             </div>
             <Progress value={completionPercentage} className="mb-4" />
             <div className="space-y-3">
@@ -235,7 +235,7 @@ const Dashboard = () => {
             className="card-glass p-6"
           >
             <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-neon-purple" />
+              <Sparkles className="w-5 h-5 text-secondary" />
               Announcements
             </h2>
             <div className="space-y-4">
@@ -245,7 +245,7 @@ const Dashboard = () => {
                     {announcement.type === 'success' ? (
                       <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
                     ) : (
-                      <AlertCircle className="w-5 h-5 text-neon-cyan flex-shrink-0 mt-0.5" />
+                      <AlertCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     )}
                     <div>
                       <h3 className="text-white font-medium text-sm">{announcement.title}</h3>

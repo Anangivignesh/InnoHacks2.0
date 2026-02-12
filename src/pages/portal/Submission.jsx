@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Upload, Github, Link2, FileText, CheckCircle, 
+import {
+  Upload, Github, Link2, FileText, CheckCircle,
   Clock, History, X, Plus, ExternalLink
 } from 'lucide-react';
 import { Button } from '../../components/ui/button';
@@ -94,7 +94,7 @@ const Submission = () => {
             className="card-glass p-6 mb-8"
           >
             <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-              <History className="w-5 h-5 text-neon-cyan" />
+              <History className="w-5 h-5 text-primary" />
               Submission History
             </h2>
             <div className="space-y-3">
@@ -103,7 +103,7 @@ const Submission = () => {
                   <div>
                     <div className="flex items-center gap-2">
                       <span className="text-white font-medium">{sub.projectName}</span>
-                      <span className="px-2 py-0.5 rounded-full bg-neon-cyan/20 text-neon-cyan text-xs">
+                      <span className="px-2 py-0.5 rounded-full bg-primary/20 text-primary text-xs">
                         {sub.version}
                       </span>
                     </div>
@@ -127,7 +127,7 @@ const Submission = () => {
           className="card-glass p-8"
         >
           <h2 className="text-xl font-semibold text-white mb-6">New Submission</h2>
-          
+
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Project Info */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -223,7 +223,7 @@ const Submission = () => {
             {/* File Upload */}
             <div className="space-y-2">
               <Label className="text-gray-300">Additional Files</Label>
-              <div className="border-2 border-dashed border-white/10 rounded-xl p-8 text-center hover:border-neon-cyan/50 transition-colors">
+              <div className="border-2 border-dashed border-white/10 rounded-xl p-8 text-center hover:border-primary/50 transition-colors">
                 <Upload className="w-12 h-12 text-gray-500 mx-auto mb-4" />
                 <p className="text-gray-400 mb-2">Drag and drop files here, or click to browse</p>
                 <p className="text-gray-500 text-sm mb-4">Support for PDF, ZIP, images up to 50MB</p>
@@ -247,7 +247,7 @@ const Submission = () => {
                   {files.map((file, index) => (
                     <div key={index} className="flex items-center justify-between bg-white/5 rounded-lg p-3">
                       <div className="flex items-center gap-3">
-                        <FileText className="w-5 h-5 text-neon-cyan" />
+                        <FileText className="w-5 h-5 text-primary" />
                         <span className="text-white text-sm">{file.name}</span>
                         <span className="text-gray-500 text-xs">({(file.size / 1024 / 1024).toFixed(2)} MB)</span>
                       </div>
@@ -269,7 +269,7 @@ const Submission = () => {
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-400">Uploading...</span>
-                  <span className="text-neon-cyan">{uploadProgress}%</span>
+                  <span className="text-primary">{uploadProgress}%</span>
                 </div>
                 <Progress value={uploadProgress} className="h-2" />
               </div>

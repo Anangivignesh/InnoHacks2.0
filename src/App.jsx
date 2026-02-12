@@ -22,6 +22,8 @@ import Leaderboard from './pages/portal/Leaderboard';
 import MentorBooking from './pages/portal/MentorBooking';
 import ProfileSettings from './pages/portal/ProfileSettings';
 import Certificate from './pages/portal/Certificate';
+import Networking from './pages/portal/Networking';
+import Resources from './pages/portal/Resources';
 
 // Components
 import Navbar from './components/Navbar';
@@ -60,13 +62,13 @@ function App() {
   const isAuthRoute = location.pathname === '/login' || location.pathname === '/signup';
 
   return (
-    <div className="min-h-screen bg-dark-900 text-white overflow-x-hidden">
+    <div className="min-h-screen bg-background-dark text-white overflow-x-hidden">
       <ParticleBackground />
       <CursorGlow />
-      
+
       {!isPortalRoute && !isAuthRoute && <Navbar />}
       {(isPortalRoute || isAuthRoute) && <PortalNavbar />}
-      
+
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           {/* Public Routes */}
@@ -77,11 +79,11 @@ function App() {
           <Route path="/sponsors" element={<AnimatedPage><Sponsors /></AnimatedPage>} />
           <Route path="/register" element={<AnimatedPage><Register /></AnimatedPage>} />
           <Route path="/contact" element={<AnimatedPage><Contact /></AnimatedPage>} />
-          
+
           {/* Auth Routes */}
           <Route path="/login" element={<AnimatedPage><Login /></AnimatedPage>} />
           <Route path="/signup" element={<AnimatedPage><Signup /></AnimatedPage>} />
-          
+
           {/* Portal Routes */}
           <Route path="/portal" element={<ProtectedRoute><AnimatedPage><Dashboard /></AnimatedPage></ProtectedRoute>} />
           <Route path="/portal/dashboard" element={<ProtectedRoute><AnimatedPage><Dashboard /></AnimatedPage></ProtectedRoute>} />
@@ -90,11 +92,13 @@ function App() {
           <Route path="/portal/submission" element={<ProtectedRoute><AnimatedPage><Submission /></AnimatedPage></ProtectedRoute>} />
           <Route path="/portal/leaderboard" element={<ProtectedRoute><AnimatedPage><Leaderboard /></AnimatedPage></ProtectedRoute>} />
           <Route path="/portal/mentors" element={<ProtectedRoute><AnimatedPage><MentorBooking /></AnimatedPage></ProtectedRoute>} />
+          <Route path="/portal/networking" element={<ProtectedRoute><AnimatedPage><Networking /></AnimatedPage></ProtectedRoute>} />
+          <Route path="/portal/resources" element={<ProtectedRoute><AnimatedPage><Resources /></AnimatedPage></ProtectedRoute>} />
           <Route path="/portal/profile" element={<ProtectedRoute><AnimatedPage><ProfileSettings /></AnimatedPage></ProtectedRoute>} />
           <Route path="/portal/certificate" element={<ProtectedRoute><AnimatedPage><Certificate /></AnimatedPage></ProtectedRoute>} />
         </Routes>
       </AnimatePresence>
-      
+
       {!isPortalRoute && !isAuthRoute && <Footer />}
     </div>
   );

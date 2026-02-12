@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  Code2, Mail, MapPin, Phone, 
-  Twitter, Linkedin, Instagram, Github, Youtube 
+import {
+  Code2, Mail, MapPin, Phone,
+  Twitter, Linkedin, Instagram, Github, Youtube
 } from 'lucide-react';
 
 const quickLinks = [
@@ -31,21 +31,23 @@ const socialLinks = [
   { name: 'YouTube', icon: Youtube, url: '#' },
 ];
 
+// Terminal import removed
+
 const Footer = () => {
   return (
-    <footer className="relative bg-dark-900 border-t border-white/5">
+    <footer className="relative bg-black border-t border-primary/20">
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-neon-cyan/5 to-transparent pointer-events-none" />
-      
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Section */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2 group">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan to-neon-purple rounded-lg blur-lg opacity-50" />
-                <div className="relative bg-dark-900 rounded-lg p-2">
-                  <Code2 className="w-6 h-6 text-neon-cyan" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-lg blur-lg opacity-50" />
+                <div className="relative bg-black rounded-lg p-2">
+                  <Code2 className="w-6 h-6 text-primary" />
                 </div>
               </div>
               <span className="text-xl font-bold text-gradient">
@@ -64,7 +66,7 @@ const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-lg bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+                    className="p-2 rounded-lg bg-white/5 text-gray-400 hover:text-white hover:bg-primary/20 transition-all"
                     aria-label={social.name}
                   >
                     <Icon className="w-5 h-5" />
@@ -82,7 +84,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-neon-cyan transition-colors text-sm"
+                    className="text-gray-400 hover:text-primary transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -99,7 +101,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-neon-cyan transition-colors text-sm"
+                    className="text-gray-400 hover:text-primary transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -113,7 +115,7 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-neon-cyan flex-shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-gray-400 text-sm">
                   Tech University Campus,<br />
                   Innovation Hub, Block C,<br />
@@ -121,19 +123,19 @@ const Footer = () => {
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-neon-cyan flex-shrink-0" />
-                <a 
+                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
+                <a
                   href="mailto:hello@innohacks.tech"
-                  className="text-gray-400 hover:text-neon-cyan transition-colors text-sm"
+                  className="text-gray-400 hover:text-primary transition-colors text-sm"
                 >
                   hello@innohacks.tech
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-neon-cyan flex-shrink-0" />
-                <a 
+                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
+                <a
                   href="tel:+919876543210"
-                  className="text-gray-400 hover:text-neon-cyan transition-colors text-sm"
+                  className="text-gray-400 hover:text-primary transition-colors text-sm"
                 >
                   +91 98765 43210
                 </a>

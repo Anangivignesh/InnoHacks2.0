@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
+import {
   Users, Plus, X, Crown, Mail, Copy, Check,
   UserPlus, Trash2, AlertCircle
 } from 'lucide-react';
@@ -23,7 +23,7 @@ const TeamManagement = () => {
   const [copied, setCopied] = useState(false);
   const [teamName, setTeamName] = useState('');
   const [inviteEmail, setInviteEmail] = useState('');
-  
+
   const [team, setTeam] = useState({
     name: 'Code Warriors',
     members: [
@@ -96,7 +96,7 @@ const TeamManagement = () => {
               transition={{ delay: 0.2 }}
               className="card-glass p-8"
             >
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-neon-cyan to-blue-500 flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-orange-500 flex items-center justify-center mb-6">
                 <Users className="w-8 h-8 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-white mb-2">Create a Team</h2>
@@ -129,7 +129,7 @@ const TeamManagement = () => {
               transition={{ delay: 0.3 }}
               className="card-glass p-8"
             >
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-neon-purple to-pink-500 flex items-center justify-center mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-secondary flex items-center justify-center mb-6">
                 <UserPlus className="w-8 h-8 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-white mb-2">Join a Team</h2>
@@ -145,13 +145,13 @@ const TeamManagement = () => {
                     className="bg-white/5 border-white/10 text-white placeholder:text-gray-500"
                   />
                 </div>
-                <Button 
-                  type="button" 
+                <Button
+                  type="button"
                   onClick={() => {
                     setHasTeam(true);
                     toast.success('Joined team successfully!');
                   }}
-                  className="w-full bg-gradient-to-r from-neon-purple to-pink-500 hover:opacity-90 py-6 rounded-xl"
+                  className="w-full bg-gradient-to-r from-primary to-orange-500 hover:opacity-90 py-6 rounded-xl"
                 >
                   <UserPlus className="w-5 h-5 mr-2" />
                   Join Team
@@ -168,7 +168,7 @@ const TeamManagement = () => {
             className="mt-8 card-glass p-6"
           >
             <div className="flex items-start gap-3">
-              <AlertCircle className="w-5 h-5 text-neon-cyan flex-shrink-0 mt-0.5" />
+              <AlertCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
               <div>
                 <h3 className="text-white font-medium mb-1">Team Rules</h3>
                 <ul className="text-gray-400 text-sm space-y-1">
@@ -218,7 +218,7 @@ const TeamManagement = () => {
         >
           <Label className="text-gray-300 mb-2 block">Team Invite Code</Label>
           <div className="flex gap-2">
-            <div className="flex-1 bg-white/5 rounded-lg px-4 py-3 font-mono text-neon-cyan">
+            <div className="flex-1 bg-white/5 rounded-lg px-4 py-3 font-mono text-primary">
               {inviteCode}
             </div>
             <Button onClick={handleCopyCode} variant="outline" className="border-white/20">
@@ -242,7 +242,7 @@ const TeamManagement = () => {
             {team.members.map((member) => (
               <div key={member.id} className="flex items-center justify-between bg-white/5 rounded-lg p-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-neon-cyan to-neon-purple flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                     <span className="text-white font-bold">{member.avatar}</span>
                   </div>
                   <div>

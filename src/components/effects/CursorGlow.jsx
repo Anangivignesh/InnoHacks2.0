@@ -54,9 +54,9 @@ const CursorGlow = () => {
           translateY: '-50%',
         }}
       >
-        <div className="w-64 h-64 rounded-full bg-gradient-to-r from-neon-cyan/20 to-neon-purple/20 blur-3xl" />
+        <div className="w-64 h-64 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 blur-3xl" />
       </motion.div>
-      
+
       {/* Inner dot */}
       <motion.div
         className="fixed pointer-events-none z-[9999]"

@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
+import {
   Brain, Globe, Wallet, Heart, GraduationCap, Rocket,
-  Code2, Database, Shield, Cpu, Smartphone, Cloud
+  Code2
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '../../components/ui/button';
@@ -15,8 +15,8 @@ const Tracks = () => {
       subtitle: 'Artificial Intelligence & Machine Learning',
       description: 'Build intelligent solutions that can learn, adapt, and make decisions. From predictive models to computer vision, explore the frontier of AI technology.',
       icon: Brain,
-      color: 'from-neon-cyan to-blue-500',
-      bgGradient: 'from-neon-cyan/20 to-blue-500/20',
+      color: 'text-primary',
+      bgGradient: 'from-primary/20 to-primary/5',
       challenges: [
         'Build a sentiment analysis tool for social media',
         'Create a computer vision app for accessibility',
@@ -32,8 +32,8 @@ const Tracks = () => {
       subtitle: 'Decentralized Future',
       description: 'Create decentralized applications that empower users with ownership and transparency. Explore smart contracts, DeFi, and the future of the internet.',
       icon: Globe,
-      color: 'from-neon-purple to-pink-500',
-      bgGradient: 'from-neon-purple/20 to-pink-500/20',
+      color: 'text-secondary',
+      bgGradient: 'from-secondary/20 to-secondary/5',
       challenges: [
         'Build a DeFi lending platform',
         'Create an NFT marketplace',
@@ -49,8 +49,8 @@ const Tracks = () => {
       subtitle: 'Financial Technology',
       description: 'Revolutionize how people manage, invest, and transact money. Build solutions that make financial services more accessible and efficient.',
       icon: Wallet,
-      color: 'from-green-400 to-neon-cyan',
-      bgGradient: 'from-green-400/20 to-neon-cyan/20',
+      color: 'text-secondary-orange',
+      bgGradient: 'from-secondary-orange/20 to-secondary-orange/5',
       challenges: [
         'Create a personal finance tracker',
         'Build a micro-investment platform',
@@ -66,8 +66,8 @@ const Tracks = () => {
       subtitle: 'Healthcare Innovation',
       description: 'Develop technology solutions that improve healthcare delivery, patient care, and medical research. Make a real impact on people\'s lives.',
       icon: Heart,
-      color: 'from-red-400 to-pink-500',
-      bgGradient: 'from-red-400/20 to-pink-500/20',
+      color: 'text-primary',
+      bgGradient: 'from-primary/20 to-primary/5',
       challenges: [
         'Build a telemedicine platform',
         'Create a mental health support app',
@@ -83,8 +83,8 @@ const Tracks = () => {
       subtitle: 'Education Technology',
       description: 'Transform learning experiences with innovative educational tools. Make education more engaging, accessible, and personalized for everyone.',
       icon: GraduationCap,
-      color: 'from-yellow-400 to-orange-500',
-      bgGradient: 'from-yellow-400/20 to-orange-500/20',
+      color: 'text-secondary',
+      bgGradient: 'from-secondary/20 to-secondary/5',
       challenges: [
         'Create an interactive learning platform',
         'Build a skill assessment tool',
@@ -100,8 +100,8 @@ const Tracks = () => {
       subtitle: 'Build Anything',
       description: 'Have an idea that doesn\'t fit into other categories? This track is for you! Work on any problem statement that excites you and your team.',
       icon: Rocket,
-      color: 'from-neon-purple to-neon-cyan',
-      bgGradient: 'from-neon-purple/20 to-neon-cyan/20',
+      color: 'text-secondary-orange',
+      bgGradient: 'from-secondary-orange/20 to-secondary-orange/5',
       challenges: [
         'Solve a local community problem',
         'Build a tool for social good',
@@ -114,7 +114,7 @@ const Tracks = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-24 pb-16 bg-background-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -122,11 +122,11 @@ const Tracks = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6">
-            Hackathon <span className="text-gradient">Tracks</span>
+          <h1 className="text-5xl sm:text-6xl font-bold mb-6 text-white">
+            Hackathon <span className="text-primary">Tracks</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Choose your domain and build something amazing. Each track offers unique challenges, 
+            Choose your domain and build something amazing. Each track offers unique challenges,
             mentorship, and exclusive prizes.
           </p>
         </motion.div>
@@ -142,23 +142,23 @@ const Tracks = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="card-glass overflow-hidden"
+                className="bg-surface-card border border-white/5 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300"
               >
                 <div className="p-8">
                   <div className="flex flex-col lg:flex-row gap-8">
                     {/* Left: Track Info */}
                     <div className="lg:w-1/3">
-                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${track.color} flex items-center justify-center mb-6`}>
-                        <Icon className="w-8 h-8 text-white" />
+                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${track.bgGradient} flex items-center justify-center mb-6`}>
+                        <Icon className={`w-8 h-8 ${track.color}`} />
                       </div>
                       <h2 className="text-3xl font-bold text-white mb-2">{track.title}</h2>
-                      <p className={`text-transparent bg-clip-text bg-gradient-to-r ${track.color} font-medium mb-4`}>
+                      <p className={`font-medium mb-4 ${track.color}`}>
                         {track.subtitle}
                       </p>
                       <p className="text-gray-400 mb-6">{track.description}</p>
                       <div className="flex items-center gap-2 mb-6">
                         <span className="text-gray-400">Track Prize:</span>
-                        <span className={`text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${track.color}`}>
+                        <span className={`text-2xl font-bold ${track.color}`}>
                           {track.prize}
                         </span>
                       </div>
@@ -169,7 +169,7 @@ const Tracks = () => {
                       {/* Challenge Ideas */}
                       <div>
                         <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-                          <Rocket className="w-5 h-5 text-neon-cyan" />
+                          <Rocket className="w-5 h-5 text-primary" />
                           Challenge Ideas
                         </h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -184,14 +184,14 @@ const Tracks = () => {
                       {/* Technologies */}
                       <div>
                         <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-                          <Code2 className="w-5 h-5 text-neon-purple" />
+                          <Code2 className="w-5 h-5 text-secondary" />
                           Recommended Technologies
                         </h3>
                         <div className="flex flex-wrap gap-2">
                           {track.technologies.map((tech, i) => (
                             <span
                               key={i}
-                              className={`px-3 py-1 rounded-full text-sm bg-gradient-to-r ${track.bgGradient} text-white`}
+                              className="px-3 py-1 rounded-full text-sm bg-white/10 text-gray-300 border border-white/10"
                             >
                               {tech}
                             </span>
@@ -220,7 +220,7 @@ const Tracks = () => {
             Register now and select your preferred track during the event.
           </p>
           <Link to="/register">
-            <Button size="lg" className="btn-gradient px-8 py-6 text-lg rounded-xl glow-cyan">
+            <Button size="lg" className="bg-gradient-to-r from-primary to-secondary text-black font-bold px-8 py-6 text-lg rounded-xl hover:opacity-90 transition-opacity">
               Register for InnoHacks 2.0
             </Button>
           </Link>
